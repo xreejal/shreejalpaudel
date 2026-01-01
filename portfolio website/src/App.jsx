@@ -78,7 +78,7 @@ function App() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Incoming AI Software Engineering Intern
+                        incoming ai software engineering intern
                       </a>
                     </strong>
                     <p>Toshiba Global Commerce Solutions – AI Agentic Products</p>
@@ -98,7 +98,7 @@ function App() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Software Engineering Intern
+                        software engineering intern
                       </a>
                     </strong>
                     <p>Baton AI (PearX W25) - Agentic AI </p>
@@ -122,7 +122,7 @@ function App() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Machine Learning Research Assistant
+                        machine learning research assistant
                       </a>
                     </strong>
                     <p>UNC Chapel Hill School of Medicine - ADHD Neuro feedback</p>
@@ -142,7 +142,7 @@ function App() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Technology Analyst Intern
+                        technology analyst intern
                       </a>
                     </strong>
                     <p>UNC Chapel Hill - OASIS</p>
