@@ -15,8 +15,6 @@ import githubLogo from './assets/github.png'
 import './App.css'
 
 function App() {
-  const [entered, setEntered] = useState(false)
-  const [isFading, setIsFading] = useState(false)
   const [year, setYear] = useState(2025)
   const graphByYear = {
     2023: contrib2023,
@@ -24,15 +22,8 @@ function App() {
     2025: contrib2025,
   }
 
-  const handleEnter = () => {
-    setIsFading(true)
-    setTimeout(() => {
-      setEntered(true)
-    }, 2200)
-  }
-
   useEffect(() => {
-    const sections = document.querySelectorAll('.section')
+    const reveals = document.querySelectorAll('.section, .reveal')
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,20 +36,13 @@ function App() {
       { threshold: 0.2 }
     )
 
-    sections.forEach((section) => observer.observe(section))
+    reveals.forEach((item) => observer.observe(item))
 
     return () => observer.disconnect()
   }, [])
 
   return (
     <>
-      {!entered && (
-        <div className={`intro ${isFading ? 'fade-out' : ''}`}>
-          <button type="button" className="intro-enter" onClick={handleEnter}>
-            Enter<span aria-hidden="true">→</span>
-          </button>
-        </div>
-      )}
       <div className="landing">
         <div className="optical">
           <div className="content">
@@ -69,11 +53,13 @@ function App() {
                 I am currently studying computer science & data science @ unc chapel hill. I enjoy building products that incorporate ai, design & engineering.
               </p>
               <div className="hero-side">
-                <nav className="hero-nav" aria-label="Hero navigation">
+                {/*
+                <nav className="hero-nav reveal" aria-label="Hero navigation">
                   <a href="#work">Work</a>
                   <a href="#about">About</a>
                 </nav>
-                <div className="hero-gif" aria-hidden="true" />
+                */}
+                <div className="hero-gif reveal" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -83,7 +69,7 @@ function App() {
             <div className="list">
               <div className="list-item split experience-item">
                 <div className="experience-main">
-                  <img className="experience-logo" src={toshibaLogo} alt="Toshiba" />
+                  <img className="experience-logo reveal" src={toshibaLogo} alt="Toshiba" />
                   <div>
                     <strong>
                       <a
@@ -103,7 +89,7 @@ function App() {
 
               <div className="list-item split experience-item">
                 <div className="experience-main">
-                  <img className="experience-logo" src={batonLogo} alt="Baton AI" />
+                  <img className="experience-logo reveal" src={batonLogo} alt="Baton AI" />
                   <div>
                     <strong>
                       <a
@@ -123,7 +109,11 @@ function App() {
 
               <div className="list-item split experience-item">
                 <div className="experience-main">
-                  <img className="experience-logo" src={medLogo} alt="UNC School of Medicine" />
+                  <img
+                    className="experience-logo reveal"
+                    src={medLogo}
+                    alt="UNC School of Medicine"
+                  />
                   <div>
                     <strong>
                       <a
@@ -143,7 +133,7 @@ function App() {
 
               <div className="list-item split experience-item">
                 <div className="experience-main">
-                  <img className="experience-logo" src={uncLogo} alt="UNC" />
+                  <img className="experience-logo reveal" src={uncLogo} alt="UNC" />
                   <div>
                     <strong>
                       <a
@@ -234,7 +224,7 @@ function App() {
             ))}
           </div>
           <img
-            className="github-graph"
+            className="github-graph reveal"
             src={graphByYear[year]}
             alt={`GitHub contribution graph for xreejal in ${year}`}
           />
@@ -254,7 +244,7 @@ function App() {
             </p>
             <div className="about-media">
               <img
-                className="about-collage"
+                className="about-collage reveal"
                 src={collageImage}
                 alt="Collage"
               />
@@ -287,7 +277,7 @@ function App() {
         
         <div>
         <img
-                className="about-collage"
+                className="about-collage reveal"
                 src={sunnyImage}
                 alt="Sunny"
               />
@@ -299,24 +289,24 @@ function App() {
           <h2>Connect</h2>
           <div className="list compact">
               <a className="icon-link" href="https://x.com/soupgou" aria-label="X">
-                <img src={xLogo} alt="" />
+                <img className="reveal" src={xLogo} alt="" />
               </a>
               <a className="icon-link" href="mailto:shreejal@unc.edu" aria-label="Email">
-                <img src={emailLogo} alt="" />
+                <img className="reveal" src={emailLogo} alt="" />
               </a>
               <a
                 className="icon-link"
                 href="https://www.linkedin.com/in/xreejal/"
                 aria-label="LinkedIn"
               >
-                <img src={linkedinLogo} alt="" />
+                <img className="reveal" src={linkedinLogo} alt="" />
               </a>
               <a
                 className="icon-link github-shift"
                 href="https://github.com/xreejal"
                 aria-label="GitHub"
               >
-                <img src={githubLogo} alt="" />
+                <img className="reveal" src={githubLogo} alt="" />
               </a>
             </div>
           </div>
