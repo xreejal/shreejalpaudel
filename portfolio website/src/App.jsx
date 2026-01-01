@@ -24,12 +24,18 @@ function App() {
               <p className="subtitle">
                 I am currently studying computer science & data science @ unc chapel hill. I enjoy building products that incorporate ai, design & engineering.
               </p>
-              <div className="hero-gif" aria-hidden="true" />
+              <div className="hero-side">
+                <nav className="hero-nav" aria-label="Hero navigation">
+                  <a href="#work">Work</a>
+                  <a href="#about">About</a>
+                </nav>
+                <div className="hero-gif" aria-hidden="true" />
+              </div>
             </div>
           </div>
 
           <div className="section">
-            <h2>Experience</h2>
+          <h2 id="work">Experience</h2>
             <div className="list">
               <div className="list-item split">
                 <div>
@@ -116,7 +122,7 @@ function App() {
         </div>
 
         <div className="section">
-          <h2>About</h2>
+          <h2 id="about">About</h2>
           <div className="list">
             <p>
               I enjoy experiences that feel thoughtful and well-crafted. I like
